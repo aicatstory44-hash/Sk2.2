@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SK - Live Preview</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/preview.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-logo">SK</div>
+
+                <div>
+                    <div class="brand-name">SK</div>
+                    <div class="brand-status">
+                        <span class="online-dot"></span>
+                        Online
+                    </div>
+                </div>
+            </div>
+
+            <button id="closeMenu" class="close-menu">×</button>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html">
+                🏠
+                <span>Dashboard</span>
+            </a>
+
+            <a href="chat.html">
+                💬
+                <span>Chat</span>
+            </a>
+
+            <a href="coding.html">
+                💻
+                <span>Coding</span>
+            </a>
+
+            <a href="preview.html" class="active">
+                👁️
+                <span>Preview</span>
+            </a>
+
+            <a href="voice.html">
+                🎙️
+                <span>Voice</span>
+            </a>
+
+            <a href="memory.html">
+                🧠
+                <span>Memory</span>
+            </a>
+
+            <a href="routines.html">
+                ⚡
+                <span>Routines</span>
+            </a>
+
+            <a href="devices.html">
+                📱
+                <span>Devices</span>
+            </a>
+
+            <a href="settings.html">
+                ⚙️
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main -->
+    <main class="preview-page">
+
+        <!-- Topbar -->
+        <header class="preview-topbar">
+
+            <button id="menuButton" class="menu-button">
+                ☰
+            </button>
+
+            <div class="preview-title">
+                <h1>Live Preview</h1>
+                <span id="previewStatus">
+                    Ready
+                </span>
+            </div>
+
+            <div class="preview-actions">
+
+                <button id="backCodingButton" class="top-action">
+                    💻 Coding
+                </button>
+
+                <button id="refreshPreviewButton" class="top-action">
+                    ↻ Refresh
+                </button>
+
+                <button id="openNewTabButton" class="top-action primary">
+                    ↗ Open
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Preview Toolbar -->
+        <section class="preview-toolbar">
+
+            <div class="toolbar-left">
+                <span class="live-indicator">
+                    <span></span>
+                    LIVE
+                </span>
+
+                <span id="previewFileName">
+                    SK Website Preview
+                </span>
+            </div>
+
+            <div class="toolbar-right">
+
+                <button id="desktopViewButton" class="device-button active">
+                    🖥️
+                </button>
+
+                <button id="mobileViewButton" class="device-button">
+                    📱
+                </button>
+
+                <button id="reloadButton" class="device-button">
+                    ⟳
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Preview Area -->
+        <section class="preview-workspace">
+
+            <div id="previewFrameWrapper" class="preview-frame-wrapper">
+
+                <div id="emptyPreview" class="empty-preview">
+
+                    <div class="empty-icon">
+                        👁️
+                    </div>
+
+                    <h2>No website to preview</h2>
+
+                    <p>
+                        Create or generate code from the Coding page first.
+                    </p>
+
+                    <button id="goCodingButton">
+                        💻 Go to Coding
+                    </button>
+
+                </div>
+
+                <iframe
+                    id="livePreviewFrame"
+                    title="SK Live Website Preview"
+                    sandbox="allow-scripts allow-forms allow-modals allow-popups allow-same-origin">
+                </iframe>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/preview.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>SK Coding</title>
+
+<link
+    rel="stylesheet"
+    href="css/main.css"
+>
+
+<link
+    rel="stylesheet"
+    href="css/coding.css"
+>
+
+</head><body><div class="app-shell"><!-- MOBILE OVERLAY -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- SIDEBAR -->
+
+<aside
+    id="sidebar"
+    class="sidebar"
+>
+
+    <div class="sidebar-top">
+
+        <div class="sidebar-title">
+
+            <span class="sidebar-logo">
+                SK
+            </span>
+
+            <strong>
+                SK Assistant
+            </strong>
+
+        </div>
+
+        <button
+            id="sidebarClose"
+            class="close-btn"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+        <a
+            href="chat.html"
+            class="active"
+        >
+            💬 Chat
+        </a>
+
+        <a href="coding.html">
+            💻 Coding
+        </a>
+
+        <a href="preview.html">
+            👁️ Preview
+        </a>
+
+        <a href="voice.html">
+            🎙️ Voice
+        </a>
+
+        <a href="memory.html">
+            🧠 Memory
+        </a>
+
+        <a href="routines.html">
+            ⚡ Routines
+        </a>
+
+        <a href="devices.html">
+            📱 Devices
+        </a>
+
+        <a href="settings.html">
+            ⚙️ Settings
+        </a>
+
+    </nav>
+
+
+    <div class="creator-card">
+
+        <div class="creator-title">
+            SK Personal AI Assistant
+        </div>
+
+        <div class="creator-name">
+            Created by Abdul Rasheed Zahid
+        </div>
+
+        <a
+            class="contact-btn"
+            href="https://wa.me/923354405110"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 Contact Creator
+        </a>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main
+    class="coding-main"
+    id="main"
+>
+
+
+    <!-- TOPBAR -->
+
+    <header class="coding-topbar">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+        >
+            ☰
+        </button>
+
+
+        <div class="coding-title">
+
+            <div class="coding-title-icon">
+                💻
+            </div>
+
+            <div>
+
+                <h1>
+                    Coding
+                </h1>
+
+                <span>
+                    Build • Run • Preview
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="coding-status">
+
+            <span
+                id="codingStatusDot"
+            ></span>
+
+            <span
+                id="codingStatusText"
+            >
+                Ready
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- PAGE -->
+
+    <section class="coding-page">
+
+
+        <!-- HERO -->
+
+        <div class="coding-heading">
+
+            <span class="coding-badge">
+                SK CODE LAB
+            </span>
+
+            <h2>
+                Build with
+                <span>SK</span>
+            </h2>
+
+            <p>
+                Code لکھیں، SK سے website بنوائیں،
+                پھر اسے اسی page پر instantly preview کریں۔
+            </p>
+
+        </div>
+
+
+
+        <!-- AI BUILDER -->
+
+        <section class="ai-builder">
+
+            <div class="builder-title">
+
+                <div class="builder-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <strong>
+                        Ask SK to Build
+                    </strong>
+
+                    <span>
+                        Describe what you want to create
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <textarea
+                id="codingPrompt"
+                class="coding-prompt"
+                placeholder="Example: Create a modern responsive portfolio website with dark theme, hero section, projects and contact section."
+            ></textarea>
+
+
+            <div class="prompt-footer">
+
+                <span class="prompt-hint">
+                    AI-generated code will appear in the editor.
+                </span>
+
+
+                <button
+                    id="generateCodeButton"
+                    class="generate-button"
+                    type="button"
+                >
+                    ✨ Generate Code
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TOOLBAR -->
+
+        <div class="coding-toolbar">
+
+            <button
+                id="codingRunButton"
+                class="coding-button primary"
+                type="button"
+            >
+                ▶ Run
+            </button>
+
+
+            <button
+                id="codingRefreshButton"
+                class="coding-button"
+                type="button"
+            >
+                ↻ Refresh
+            </button>
+
+
+            <button
+                id="codeCopyButton"
+                class="coding-button"
+                type="button"
+            >
+                📋 Copy
+            </button>
+
+
+            <button
+                id="codeClearButton"
+                class="coding-button danger"
+                type="button"
+            >
+                🗑 Clear
+            </button>
+
+
+            <button
+                id="previewOpenButton"
+                class="coding-button"
+                type="button"
+            >
+                👁️ Full Preview
+            </button>
+
+        </div>
+
+
+
+        <!-- WORKSPACE -->
+
+        <div class="workspace">
+
+
+            <!-- EDITOR -->
+
+            <section class="workspace-panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+
+                        <span class="panel-dot"></span>
+
+                        <strong>
+                            CODE EDITOR
+                        </strong>
+
+                    </div>
+
+
+                    <span class="panel-language">
+                        HTML
+                    </span>
+
+                </div>
+
+
+                <div class="editor-wrapper">
+
+                    <div
+                        id="lineNumbers"
+                        class="line-numbers"
+                    >
+                        1
+                    </div>
+
+
+                    <textarea
+                        id="codeEditor"
+                        class="code-editor"
+                        spellcheck="false"
+                        autocapitalize="off"
+                        autocomplete="off"
+                        placeholder="Write your complete HTML here..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="editor-footer">
+
+                    <button
+                        id="previewRefreshButton"
+                        type="button"
+                    >
+                        ▶ Run Preview
+                    </button>
+
+
+                    <span>
+                        Auto-save enabled
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PREVIEW -->
+
+            <section class="workspace-panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-title">
+
+                        <span class="preview-dot"></span>
+
+                        <strong>
+                            LIVE PREVIEW
+                        </strong>
+
+                    </div>
+
+
+                    <span class="live-label">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="preview-screen">
+
+                    <iframe
+                        id="codingPreview"
+                        title="SK Live Code Preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+
+
+                    <div
+                        id="emptyPreview"
+                        class="empty-preview"
+                    >
+
+                        <div>
+                            🚀
+                        </div>
+
+                        <strong>
+                            Preview Ready
+                        </strong>
+
+                        <span>
+                            Write code and press Run.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="preview-footer">
+
+                    <span>
+                        Live sandbox preview
+                    </span>
+
+                    <small>
+                        Safe local preview
+                    </small>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="coding-features">
+
+            <div class="feature">
+
+                <span>🤖</span>
+
+                <div>
+
+                    <strong>
+                        AI Builder
+                    </strong>
+
+                    <small>
+                        Ask SK to create code
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>⚡</span>
+
+                <div>
+
+                    <strong>
+                        Live Run
+                    </strong>
+
+                    <small>
+                        Instantly preview your code
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <span>💾</span>
+
+                <div>
+
+                    <strong>
+                        Auto Save
+                    </strong>
+
+                    <small>
+                        Your code stays saved
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</div><script src="js/coding.js"></script>
+    <script src="js/chat-coding.js"></script>
+    
+</body>
+</html>

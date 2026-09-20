@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SK Voice Assistant</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/voice.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+            <div class="logo-circle">SK</div>
+
+            <div>
+                <h2>SK</h2>
+                <span>AI Assistant</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html">🏠 Dashboard</a>
+            <a href="chat.html">💬 Chat</a>
+            <a href="coding.html">💻 Coding</a>
+            <a href="preview.html">👁️ Preview</a>
+            <a href="voice.html" class="active">🎤 Voice</a>
+            <a href="memory.html">🧠 Memory</a>
+            <a href="routines.html">⚡ Routines</a>
+            <a href="devices.html">📱 Devices</a>
+            <a href="settings.html">⚙️ Settings</a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="https://wa.me/923354405110"
+                target="_blank"
+                class="creator-contact"
+            >
+                💬 Contact Creator
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="voice-header">
+
+            <button
+                type="button"
+                id="menuBtn"
+                class="menu-btn"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+            <div>
+                <h1>🎤 SK Live Voice</h1>
+                <p>Continuous AI voice conversation</p>
+            </div>
+
+            <div class="connection-status">
+
+                <span
+                    id="statusDot"
+                    class="status-dot"
+                ></span>
+
+                <span id="connectionText">
+                    Ready
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <section class="voice-container">
+
+            <!-- LIVE CARD -->
+            <div
+                id="voiceCard"
+                class="voice-card"
+            >
+
+                <div
+                    id="voiceOrb"
+                    class="voice-orb"
+                >
+
+                    <div class="orb-ring ring-one"></div>
+                    <div class="orb-ring ring-two"></div>
+
+                    <button
+                        type="button"
+                        id="micButton"
+                        class="mic-button"
+                        aria-label="Start live conversation"
+                    >
+                        🎤
+                    </button>
+
+                </div>
+
+
+                <h2 id="voiceStatus">
+                    Ready
+                </h2>
+
+                <p id="voiceHint">
+                    Tap the microphone to start a continuous conversation.
+                </p>
+
+
+                <!-- LANGUAGE -->
+                <div class="detected-language">
+
+                    <span>🌍 Language:</span>
+
+                    <strong id="detectedLanguage">
+                        Auto
+                    </strong>
+
+                </div>
+
+
+                <!-- USER SPEECH -->
+                <div class="transcript-box">
+
+                    <div class="box-title">
+                        🎙️ You
+                    </div>
+
+                    <div
+                        id="transcript"
+                        class="transcript"
+                    >
+                        Your speech will appear here...
+                    </div>
+
+                </div>
+
+
+                <!-- SK -->
+                <div class="response-box">
+
+                    <div class="box-title">
+                        🤖 SK
+                    </div>
+
+                    <div
+                        id="responseText"
+                        class="response-text"
+                    >
+                        SK's response will appear here...
+                    </div>
+
+                </div>
+
+
+                <!-- LIVE CONTROLS -->
+                <div class="voice-controls">
+
+                    <button
+                        type="button"
+                        id="stopListeningBtn"
+                        class="control-btn danger"
+                    >
+                        ⏹ Stop
+                    </button>
+
+                    <button
+                        type="button"
+                        id="stopSpeakingBtn"
+                        class="control-btn"
+                    >
+                        🔇 Stop Speaking
+                    </button>
+
+                </div>
+
+
+                <!-- LIVE INDICATOR -->
+                <div
+                    id="liveIndicator"
+                    class="live-indicator"
+                >
+                    <span></span>
+                    Live conversation OFF
+                </div>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+            <div class="voice-settings">
+
+                <h3>⚙️ Voice Settings</h3>
+
+
+                <div class="setting-row">
+
+                    <label for="languageSelect">
+                        Recognition Language
+                    </label>
+
+                    <select id="languageSelect">
+
+                        <option value="auto">
+                            🌍 Auto
+                        </option>
+
+                        <option value="en-US">
+                            English
+                        </option>
+
+                        <option value="ur-PK">
+                            اردو
+                        </option>
+
+                        <option value="hi-IN">
+                            हिन्दी
+                        </option>
+
+                        <option value="ar-SA">
+                            العربية
+                        </option>
+
+                        <option value="zh-CN">
+                            中文
+                        </option>
+
+                        <option value="ja-JP">
+                            日本語
+                        </option>
+
+                        <option value="es-ES">
+                            Español
+                        </option>
+
+                        <option value="de-DE">
+                            Deutsch
+                        </option>
+
+                        <option value="fr-FR">
+                            Français
+                        </option>
+
+                        <option value="ru-RU">
+                            Русский
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <label for="speedRange">
+                        Speaking Speed
+                    </label>
+
+                    <input
+                        id="speedRange"
+                        type="range"
+                        min="0.5"
+                        max="2"
+                        value="1"
+                        step="0.1"
+                    >
+
+                    <span id="speedValue">
+                        1.0x
+                    </span>
+
+                </div>
+
+
+                <div class="setting-row">
+
+                    <label for="volumeRange">
+                        Volume
+                    </label>
+
+                    <input
+                        id="volumeRange"
+                        type="range"
+                        min="0"
+                        max="1"
+                        value="1"
+                        step="0.1"
+                    >
+
+                    <span id="volumeValue">
+                        100%
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/app.js"></script>
+<script src="js/voice.js"></script>
+
+</body>
+</html>

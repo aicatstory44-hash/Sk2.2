@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SK Memory</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/memory.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="brand-logo">SK</div>
+                <div>
+                    <h2>SK</h2>
+                    <span>AI Assistant</span>
+                </div>
+            </div>
+
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                type="button"
+            >
+                ×
+            </button>
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html">🏠 Dashboard</a>
+
+            <a href="chat.html">💬 Chat</a>
+
+            <a href="coding.html">💻 Coding</a>
+
+            <a href="preview.html">▶️ Preview</a>
+
+            <a href="voice.html">🎙️ Voice</a>
+
+            <a
+                href="memory.html"
+                class="active"
+            >
+                🧠 Memory
+            </a>
+
+            <a href="routines.html">⚡ Routines</a>
+
+            <a href="devices.html">📱 Devices</a>
+
+            <a href="settings.html">⚙️ Settings</a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+            <span class="online-dot"></span>
+            SK Online
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="page-header">
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+            >
+                ☰
+            </button>
+
+            <div>
+                <h1>🧠 Memory</h1>
+                <p>Manage what SK remembers about you.</p>
+            </div>
+
+        </header>
+
+
+        <!-- MEMORY INFO -->
+        <section class="memory-info">
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🧠
+                </div>
+
+                <div>
+                    <h3>Smart Memory</h3>
+
+                    <p>
+                        SK only stores information that you
+                        explicitly approve.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="memory-count-card">
+
+                <span>Saved Memories</span>
+
+                <strong id="memoryCount">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD MEMORY -->
+        <section class="memory-panel">
+
+            <div class="panel-title">
+
+                <div>
+                    <h2>Save a Memory</h2>
+
+                    <p>
+                        Add something you want SK to remember.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="memoryForm">
+
+                <label for="memoryText">
+                    Memory
+                </label>
+
+                <textarea
+                    id="memoryText"
+                    rows="4"
+                    maxlength="1000"
+                    placeholder="Example: I am learning HTML and JavaScript."
+                    required
+                ></textarea>
+
+
+                <label for="memoryCategory">
+                    Category
+                </label>
+
+                <select id="memoryCategory">
+
+                    <option value="general">
+                        General
+                    </option>
+
+                    <option value="learning">
+                        Learning
+                    </option>
+
+                    <option value="project">
+                        Project
+                    </option>
+
+                    <option value="preference">
+                        Preference
+                    </option>
+
+                    <option value="language">
+                        Language
+                    </option>
+
+                    <option value="work">
+                        Work
+                    </option>
+
+                </select>
+
+
+                <label class="approval-box">
+
+                    <input
+                        type="checkbox"
+                        id="memoryApproval"
+                        required
+                    >
+
+                    <span>
+                        I approve SK storing this memory.
+                    </span>
+
+                </label>
+
+
+                <button
+                    class="primary-btn"
+                    type="submit"
+                >
+                    💾 Save Memory
+                </button>
+
+            </form>
+
+            <div
+                id="formMessage"
+                class="form-message"
+            ></div>
+
+        </section>
+
+
+        <!-- MEMORIES -->
+        <section class="memory-panel">
+
+            <div class="memory-list-header">
+
+                <div>
+                    <h2>Your Memories</h2>
+
+                    <p>
+                        Information currently saved by SK.
+                    </p>
+                </div>
+
+                <button
+                    id="clearAllBtn"
+                    class="danger-btn"
+                    type="button"
+                >
+                    🗑️ Clear All
+                </button>
+
+            </div>
+
+
+            <div
+                id="memoryList"
+                class="memory-list"
+            >
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🧠
+                    </div>
+
+                    <h3>No memories yet</h3>
+
+                    <p>
+                        Add your first approved memory above.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- MOBILE OVERLAY -->
+<div
+    id="sidebarOverlay"
+    class="sidebar-overlay"
+></div>
+
+
+<script src="js/app.js"></script>
+<script src="js/memory.js"></script>
+
+</body>
+</html>
