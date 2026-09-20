@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta
+    name="description"
+    content="SK - Personal AI Assistant"
+>
+
+<title>SK — Personal AI Assistant</title>
+
+<link
+    rel="stylesheet"
+    href="css/dashboard.css"
+>
+
+</head><body><div class="app"><!-- =========================
+     SIDEBAR
+========================== -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-brand">
+
+        <div class="brand-logo">
+            SK
+        </div>
+
+        <div class="brand-info">
+            <strong>SK</strong>
+            <span>Personal AI</span>
+        </div>
+
+        <button
+            class="close-sidebar"
+            id="closeSidebar"
+            type="button"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+        <a
+            href="index.html"
+            class="nav-item active"
+        >
+            <span>⌂</span>
+            <strong>Dashboard</strong>
+        </a>
+
+        <a
+            href="chat.html"
+            class="nav-item"
+        >
+            <span>◉</span>
+            <strong>Chat</strong>
+        </a>
+
+        <a
+            href="coding.html"
+            class="nav-item"
+        >
+            <span>&lt;/&gt;</span>
+            <strong>Coding</strong>
+        </a>
+
+        <a
+            href="preview.html"
+            class="nav-item"
+        >
+            <span>▷</span>
+            <strong>Preview</strong>
+        </a>
+
+        <a
+            href="voice.html"
+            class="nav-item"
+        >
+            <span>♬</span>
+            <strong>Voice</strong>
+        </a>
+
+        <a
+            href="memory.html"
+            class="nav-item"
+        >
+            <span>◇</span>
+            <strong>Memory</strong>
+        </a>
+
+        <a
+            href="routines.html"
+            class="nav-item"
+        >
+            <span>✦</span>
+            <strong>Routines</strong>
+        </a>
+
+        <a
+            href="devices.html"
+            class="nav-item"
+        >
+            <span>▣</span>
+            <strong>Devices</strong>
+        </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+        <a
+            href="settings.html"
+            class="nav-item"
+        >
+            <span>⚙</span>
+            <strong>Settings</strong>
+        </a>
+
+
+        <div class="system-status">
+
+            <span
+                class="status-dot"
+                id="statusDot"
+            ></span>
+
+            <div>
+                <strong id="statusText">
+                    Checking...
+                </strong>
+
+                <small>
+                    System status
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- Mobile overlay -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+></div>
+
+
+<!-- =========================
+     MAIN
+========================== -->
+
+<main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <div class="topbar-brand">
+
+            <strong>SK</strong>
+
+            <span>
+                Personal AI Assistant
+            </span>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+            <button
+                class="icon-button"
+                id="themeButton"
+                type="button"
+                aria-label="Change theme"
+            >
+                ◐
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         DASHBOARD
+    ========================== -->
+
+    <section class="dashboard">
+
+        <!-- HERO -->
+
+        <section class="hero-card">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    <span></span>
+                    AI SYSTEM ONLINE
+                </div>
+
+                <h1>
+                    Welcome to
+                    <span>SK</span>
+                </h1>
+
+                <p>
+                    Your personal AI workspace for
+                    conversation, coding, learning,
+                    voice and productivity.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="chat.html"
+                        class="primary-button"
+                    >
+                        Start Chat
+                    </a>
+
+                    <a
+                        href="voice.html"
+                        class="secondary-button"
+                    >
+                        Voice Assistant
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-orb">
+
+                <div class="orb-ring ring-one"></div>
+                <div class="orb-ring ring-two"></div>
+
+                <div class="orb-core">
+                    SK
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATUS CARDS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◉
+                </div>
+
+                <div>
+                    <span>AI Status</span>
+
+                    <strong id="aiStatus">
+                        Checking
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◇
+                </div>
+
+                <div>
+                    <span>Memory</span>
+
+                    <strong id="memoryCount">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ◇
+                </div>
+
+                <div>
+                    <span>Voice</span>
+
+                    <strong id="voiceStatus">
+                        Ready
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⚡
+                </div>
+
+                <div>
+                    <span>System</span>
+
+                    <strong id="systemStatus">
+                        Online
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        QUICK ACCESS
+                    </span>
+
+                    <h2>
+                        What do you want to do?
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <a
+                    href="chat.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        ◉
+                    </div>
+
+                    <div>
+                        <strong>
+                            Chat with SK
+                        </strong>
+
+                        <span>
+                            Ask questions and get help
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="coding.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <div>
+                        <strong>
+                            Code
+                        </strong>
+
+                        <span>
+                            Build and debug projects
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="voice.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        ♬
+                    </div>
+
+                    <div>
+                        <strong>
+                            Voice
+                        </strong>
+
+                        <span>
+                            Talk naturally with SK
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="memory.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        ◇
+                    </div>
+
+                    <div>
+                        <strong>
+                            Memory
+                        </strong>
+
+                        <span>
+                            Manage saved preferences
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="routines.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        ✦
+                    </div>
+
+                    <div>
+                        <strong>
+                            Routines
+                        </strong>
+
+                        <span>
+                            Create automated workflows
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+
+                <a
+                    href="devices.html"
+                    class="action-card"
+                >
+                    <div class="action-icon">
+                        ▣
+                    </div>
+
+                    <div>
+                        <strong>
+                            Devices
+                        </strong>
+
+                        <span>
+                            Connected device controls
+                        </span>
+                    </div>
+
+                    <b>→</b>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTIVITY -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        ACTIVITY
+                    </span>
+
+                    <h2>
+                        Recent Activity
+                    </h2>
+                </div>
+
+                <span
+                    class="activity-status"
+                    id="activityStatus"
+                >
+                    System ready
+                </span>
+
+            </div>
+
+
+            <div
+                class="activity-card"
+                id="activityList"
+            >
+
+                <div class="empty-activity">
+
+                    <div>
+                        ◌
+                    </div>
+
+                    <strong>
+                        No recent activity
+                    </strong>
+
+                    <span>
+                        Your recent SK activity
+                        will appear here.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CAPABILITIES -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        CAPABILITIES
+                    </span>
+
+                    <h2>
+                        SK Workspace
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="capability-grid">
+
+                <div class="capability">
+                    <span>AI</span>
+                    <strong>Intelligent Chat</strong>
+                    <small>
+                        Natural conversations
+                    </small>
+                </div>
+
+                <div class="capability">
+                    <span>WEB</span>
+                    <strong>Information</strong>
+                    <small>
+                        Search and tools
+                    </small>
+                </div>
+
+                <div class="capability">
+                    <span>CODE</span>
+                    <strong>Development</strong>
+                    <small>
+                        Build web projects
+                    </small>
+                </div>
+
+                <div class="capability">
+                    <span>VOICE</span>
+                    <strong>Voice Assistant</strong>
+                    <small>
+                        Speak and listen
+                    </small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <strong>
+                SK
+            </strong>
+
+            <span>
+                Personal AI Workspace
+            </span>
+
+        </footer>
+
+    </section>
+
+</main>
+
+</div><!-- =========================
+     JAVASCRIPT
+========================== --><script src="js/dashboard.js"></script></body>
+</html>
