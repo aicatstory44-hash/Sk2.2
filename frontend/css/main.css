@@ -1,0 +1,296 @@
+SK SHARED MAIN CSS
+Used by all SK pages
+========================================== */
+
+* {
+  box-sizing: border-box;
+  }
+
+html,
+body {
+margin: 0;
+padding: 0;
+width: 100%;
+min-height: 100%;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================
+SIDEBAR
+========================================== */
+
+.sidebar {
+position: fixed;
+top: 0;
+left: 0;
+
+width: 270px;
+height: 100vh;
+
+background: #0d1119;
+border-right: 1px solid rgba(255,255,255,0.08);
+
+color: #f4f7fb;
+
+z-index: 1000;
+
+display: flex;
+flex-direction: column;
+
+transition: transform 0.3s ease;
+
+}
+
+/* ==========================================
+SIDEBAR HEADER
+========================================== */
+
+.sidebar-header {
+height: 82px;
+
+padding: 0 18px;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 11px;
+}
+
+.brand-logo {
+width: 43px;
+height: 43px;
+
+border-radius: 13px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-weight: 800;
+font-size: 15px;
+
+color: white;
+
+background:
+    linear-gradient(
+        135deg,
+        #7c5cff,
+        #5ee7ff
+    );
+
+box-shadow:
+    0 0 25px rgba(94,231,255,0.15);
+
+}
+
+.brand h2 {
+margin: 0;
+font-size: 17px;
+}
+
+.brand span {
+display: block;
+
+margin-top: 3px;
+
+font-size: 11px;
+
+color: #8993a5;
+
+}
+
+.close-sidebar {
+display: none;
+
+width: 36px;
+height: 36px;
+
+border: 1px solid rgba(255,255,255,0.08);
+
+border-radius: 10px;
+
+background: #151b27;
+
+color: #fff;
+
+font-size: 22px;
+
+cursor: pointer;
+
+}
+
+/* ==========================================
+NAVIGATION
+========================================== */
+
+.sidebar-nav {
+flex: 1;
+
+padding: 18px 12px;
+
+overflow-y: auto;
+
+}
+
+.sidebar-nav a {
+display: flex;
+align-items: center;
+
+gap: 12px;
+
+width: 100%;
+
+padding: 12px 14px;
+
+margin-bottom: 5px;
+
+border-radius: 12px;
+
+color: #aab3c2;
+
+text-decoration: none;
+
+font-size: 14px;
+
+transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+}
+
+.sidebar-nav a span {
+width: 23px;
+
+text-align: center;
+
+font-size: 17px;
+
+}
+
+.sidebar-nav a:hover {
+background: rgba(255,255,255,0.06);
+
+color: #fff;
+
+transform: translateX(2px);
+
+}
+
+.sidebar-nav a.active {
+color: #fff;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(124,92,255,0.25),
+        rgba(94,231,255,0.10)
+    );
+
+border: 1px solid rgba(94,231,255,0.12);
+
+}
+
+/* ==========================================
+MOBILE MENU BUTTON
+========================================== */
+
+.menu-button {
+cursor: pointer;
+}
+
+/* ==========================================
+SIDEBAR OVERLAY
+========================================== */
+
+.sidebar-overlay {
+display: none;
+
+position: fixed;
+
+inset: 0;
+
+background: rgba(0,0,0,0.58);
+
+z-index: 900;
+
+backdrop-filter: blur(3px);
+
+}
+
+.sidebar-overlay.active {
+display: block;
+}
+
+/* ==========================================
+MOBILE SIDEBAR
+========================================== */
+
+@media (max-width: 760px) {
+
+.sidebar {
+    width: min(285px, 82vw);
+
+    transform: translateX(-105%);
+
+    box-shadow:
+        12px 0 40px rgba(0,0,0,0.35);
+}
+
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+
+.close-sidebar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+}
+
+/* ==========================================
+REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+.sidebar,
+.sidebar-nav a {
+    transition: none;
+}
+
+}
+
+/* ==========================================
+SCROLLBAR
+========================================== */
+
+.sidebar-nav::-webkit-scrollbar {
+width: 5px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+background: rgba(255,255,255,0.12);
+
+border-radius: 10px;
+
+}
